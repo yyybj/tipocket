@@ -38,7 +38,7 @@ func main() {
 		Config:   &cfg,
 		Provider: cluster.NewDefaultClusterProvider(),
 		ClientCreator: cll.NewHttpCreator(*testTime),
-i 		NemesisGens: util.ParseNemesisGenerators(fixture.Context.Nemesis),
+ 		NemesisGens: util.ParseNemesisGenerators(fixture.Context.Nemesis),
 		ClusterDefs: test_infra.NewEmptyCluster(c.Namespace),
 	}
 	suit.Run(context.Background())
