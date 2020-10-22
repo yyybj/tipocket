@@ -25,8 +25,8 @@ import (
 
 	"github.com/pingcap/tidb-operator/pkg/apis/pingcap/v1alpha1"
 
-	"github.com/pingcap/tipocket/pkg/cluster"
-	"github.com/pingcap/tipocket/pkg/core"
+	"github.com/yyybj/tipocket/pkg/cluster"
+	"github.com/yyybj/tipocket/pkg/core"
 )
 
 type scalingGenerator struct {

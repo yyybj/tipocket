@@ -11,9 +11,9 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/kvproto/pkg/metapb"
 
-	"github.com/pingcap/tipocket/pkg/cluster"
-	"github.com/pingcap/tipocket/pkg/core"
-	"github.com/pingcap/tipocket/pkg/util/pdutil"
+	"github.com/yyybj/tipocket/pkg/cluster"
+	"github.com/yyybj/tipocket/pkg/core"
+	"github.com/yyybj/tipocket/pkg/util/pdutil"
 )
 
 type leaderShuffleGenerator struct {

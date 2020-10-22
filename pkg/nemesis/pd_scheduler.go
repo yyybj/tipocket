@@ -8,9 +8,9 @@ import (
 
 	"github.com/ngaut/log"
 
-	"github.com/pingcap/tipocket/pkg/cluster"
-	"github.com/pingcap/tipocket/pkg/core"
-	"github.com/pingcap/tipocket/pkg/util/pdutil"
+	"github.com/yyybj/tipocket/pkg/cluster"
+	"github.com/yyybj/tipocket/pkg/core"
+	"github.com/yyybj/tipocket/pkg/util/pdutil"
 )
 
 // schedulerGenerator generates shuffle-leader-scheduler,shuffle-region-scheduler

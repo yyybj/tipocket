@@ -4,8 +4,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/pingcap/tipocket/pkg/core"
-	"github.com/pingcap/tipocket/pkg/test-infra/tests"
+	"github.com/yyybj/tipocket/pkg/core"
+	"github.com/yyybj/tipocket/pkg/test-infra/tests"
 )
 
 var (

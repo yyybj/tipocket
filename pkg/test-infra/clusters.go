@@ -15,6 +15,7 @@ import (
 	"github.com/pingcap/tipocket/pkg/test-infra/mysql"
 	"github.com/pingcap/tipocket/pkg/test-infra/tidb"
 	"github.com/pingcap/tipocket/pkg/test-infra/util"
+	"github.com/yyybj/tipocket/pkg/test-infra/fluentd"
 )
 
 // groupCluster creates clusters concurrently
@@ -144,6 +145,10 @@ func (c *compositeCluster) GetClientNodes() ([]cluster.ClientNode, error) {
 // NewDefaultCluster creates a new TiDB cluster
 func NewDefaultCluster(namespace, name string, config fixture.TiDBClusterConfig) cluster.Cluster {
 	return tidb.New(namespace, name, config)
+}
+
+func NewEmptyCluster(name string) cluster.Cluster {
+	return fluentd.New(name)
 }
 
 // NewCDCCluster creates two TiDB clusters with CDC

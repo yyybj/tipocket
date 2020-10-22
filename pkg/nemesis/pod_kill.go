@@ -9,10 +9,12 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	chaosv1alpha1 "github.com/pingcap/chaos-mesh/api/v1alpha1"
+	chaosv1alpha1 "github.com/chaos-mesh/chaos-mesh/api/v1alpha1"
 
-	"github.com/pingcap/tipocket/pkg/cluster"
-	"github.com/pingcap/tipocket/pkg/core"
+	"github.com/yyybj/tipocket/pkg/cluster"
+	"github.com/yyybj/tipocket/pkg/core"
+
+	ngautlog "github.com/ngaut/log"
 )
 
 // podKillGenerator generate code about PodKill chaos.
@@ -58,6 +60,7 @@ type podKill struct {
 
 func (k podKill) Invoke(ctx context.Context, node *cluster.Node, args ...interface{}) error {
 	log.Printf("apply nemesis %s on node %s(ns:%s)", core.PodKill, node.PodName, node.Namespace)
+	log.Printf("podkillchaos group is %s", chaosv1alpha1.GroupVersion.Group)
 	podChaos := buildPodKillChaos(node.Namespace, node.Namespace,
 		node.PodName)
 	return k.cli.ApplyPodChaos(ctx, &podChaos)

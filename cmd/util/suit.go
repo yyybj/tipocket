@@ -31,7 +31,7 @@ import (
 	"github.com/pingcap/tipocket/pkg/core"
 	"github.com/pingcap/tipocket/pkg/history"
 	"github.com/pingcap/tipocket/pkg/loki"
-	"github.com/pingcap/tipocket/pkg/nemesis"
+	"github.com/yyybj/tipocket/pkg/nemesis"
 	"github.com/pingcap/tipocket/pkg/test-infra/fixture"
 	"github.com/pingcap/tipocket/pkg/verify"
 )

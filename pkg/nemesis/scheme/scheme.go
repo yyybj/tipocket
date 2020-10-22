@@ -14,12 +14,14 @@
 package scheme
 
 import (
-	chaosoperatorv1alpha1 "github.com/pingcap/chaos-mesh/api/v1alpha1"
+	"log"
+	chaosoperatorv1alpha1 "github.com/chaos-mesh/chaos-mesh/api/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	kubescheme "k8s.io/client-go/kubernetes/scheme"
+	"github.com/ngaut/log"
 )
 
 // Scheme gathers the schemes of native resources and custom resources used by tipocket
@@ -29,5 +31,15 @@ var Scheme = runtime.NewScheme()
 func init() {
 	v1.AddToGroupVersion(Scheme, schema.GroupVersion{Version: "v1"})
 	utilruntime.Must(kubescheme.AddToScheme(Scheme))
+	log.Printf("nemesis scheme init")
 	utilruntime.Must(chaosoperatorv1alpha1.AddToScheme(Scheme))
+	//v1.AddToGroupVersion(Scheme, schema.GroupVersion{Group: "chaos-mesh.org", Version: "v1alpha1"})
+
+	//GroupVersion = schema.GroupVersion{Group: "chaos-mesh.org", Version: "v1alpha1"}
+	//
+	//// SchemeBuilder is used to add go types to the GroupVersionKind scheme
+	//SchemeBuilder = &scheme.Builder{GroupVersion: GroupVersion}
+	//
+	//// AddToScheme adds the types in this group-version to the given scheme.
+	//AddToScheme = SchemeBuilder.AddToScheme
 }
